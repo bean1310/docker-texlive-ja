@@ -1,11 +1,13 @@
 # Copyright (c) 2016 Kaito Udagawa
 # Copyright (c) 2016-2019 3846masa
+# Copyright (c) 2020 bean1310
 # Released under the MIT license
 # https://opensource.org/licenses/MIT
 
 FROM frolvlad/alpine-glibc:latest
 
 ENV PATH /usr/local/texlive/2019/bin/x86_64-linux:$PATH
+LABEL maintainer="bean1310 <github.com/bean1310>"
 
 RUN apk add --no-cache perl fontconfig-dev freetype-dev && \
     apk add --no-cache --virtual .fetch-deps wget xz tar && \
@@ -27,6 +29,8 @@ RUN apk add --no-cache perl fontconfig-dev freetype-dev && \
     rm -fr /tmp/install-tl-unx && \
     apk del .fetch-deps
 
+RUN apk add --no-cache make bash ghostscript
+
 WORKDIR /workdir
 
-CMD ["sh"]
+CMD ["bash"]
