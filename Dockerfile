@@ -29,7 +29,7 @@ RUN apk add --no-cache perl fontconfig-dev freetype-dev && \
     rm -fr /tmp/install-tl-unx && \
     apk del .fetch-deps
 
-RUN apk add --no-cache make bash ghostscript
+RUN apk add --no-cache make bash ghostscript imagemagick
 
 WORKDIR /workdir
 
