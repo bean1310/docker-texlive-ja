@@ -1,19 +1,19 @@
 # Copyright (c) 2016 Kaito Udagawa
-# Copyright (c) 2016-2019 3846masa
+# Copyright (c) 2016-2020 3846masa
 # Copyright (c) 2020 bean1310
 # Released under the MIT license
 # https://opensource.org/licenses/MIT
 
 FROM frolvlad/alpine-glibc:latest
 
-ENV PATH /usr/local/texlive/2019/bin/x86_64-linux:$PATH
 LABEL maintainer="bean1310 <github.com/bean1310>"
+ENV PATH /usr/local/texlive/2020/bin/x86_64-linuxmusl:$PATH
 
-RUN apk add --no-cache perl fontconfig-dev freetype-dev && \
-    apk add --no-cache --virtual .fetch-deps wget xz tar && \
+RUN apk add --no-cache curl perl fontconfig-dev freetype-dev && \
+    apk add --no-cache --virtual .fetch-deps xz tar wget && \
     mkdir /tmp/install-tl-unx && \
-    wget -qO - ftp://tug.org/historic/systems/texlive/2019/install-tl-unx.tar.gz | \
-    tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
+    curl -L ftp://tug.org/historic/systems/texlive/2020/install-tl-unx.tar.gz | \
+      tar -xz -C /tmp/install-tl-unx --strip-components=1 && \
     printf "%s\n" \
       "selected_scheme scheme-basic" \
       "tlpdbopt_install_docfiles 0" \
