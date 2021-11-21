@@ -1,8 +1,6 @@
-# bea1310/alpine-texlive-ja
+# bean1310/alpine-texlive-ja
 
-[![Docker Automated build](https://img.shields.io/docker/automated/bean1310/alpine-texlive-ja.svg)](https://hub.docker.com/r/bean1310/alpine-texlive-ja/)
-[![Docker Image Size](https://images.microbadger.com/badges/image/bean1310/alpine-texlive-ja.svg)](https://microbadger.com/images/bean1310/alpine-texlive-ja "Get your own image badge on microbadger.com")
-[![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg)](https://github.com/RichardLitt/standard-readme)
+**このリポジトリは[ghcr.io/bean1310/texlive-ja](https://github.com/bean1310/texlive-ja)に移動しました．**
 
 > Minimal TeX Live image for Japanese based on alpine
 
